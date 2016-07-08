@@ -1,0 +1,24 @@
+package hb.study.java_20160708;
+
+public class GCTest {
+
+	public static void main(String[] args) {
+
+		// 가비지 털렉터 테스트
+
+		// 조인성,송중기는 레퍼런스가 끊겼다
+		// 레퍼런스가 끊길경우 다시 연결은 불가능하다.(새로 생성해야한다)
+		String name = new String("조인성");
+
+		// name에 new 키워드를 사용하여 송중기를 생성하면 heap영역에서 새로운 메모리를 만들고
+		// 새로운 메모리 주소에대해 레퍼런스가 연결되고 기존의 조인성과의 레퍼런스가 끊어진다.
+		name = new String("송중기");
+
+		// 위와 마친가지로 송중기와의 레퍼런스가 끊어지고 이민호와 레퍼런스가 연결된다.
+		name = new String("이민호");
+
+		System.out.println("name: " + name);
+
+	}
+
+}
